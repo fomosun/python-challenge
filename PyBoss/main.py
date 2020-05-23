@@ -1,8 +1,7 @@
 # Import Dependencies
 import os
 import csv
-import pandas as pd
-from pathlib import Path 
+
 
 # Declare file location through pathlib
 input_file = os.path.join("CSV-Resources", "employee_data.csv")
@@ -106,19 +105,11 @@ with open(input_file,newline="", encoding="utf-8") as csvfile:
         state_abbreviations.append(usa_state_abbreviations[row[4]])
 
 
-
-# Use pandas library to create Data Frame Object 
-# Keys replace orignal headers, values are the lists created 
-new_df = pd.DataFrame({"Emp ID": Employee_ID, "First Name": First_Name, "Last Name": Last_Name, "DOB": DOB_new, "SSN":SSN_Hide, "State": state_abbreviations})
-
-# Export new_df to csv, use .join method so it works on in different operating systems
-#new_df.to_csv(Path("python-challenge", "PyBoss(Bonus)", "employee_data_reformatted.csv"), index=False, header=True)
-
 # Zip lists together
 formated_csv = zip(Employee_ID, First_Name, Last_Name, DOB_new, SSN_Hide, state_abbreviations)
 
 # Set variable for output file
-output_file = os.path.join("CSV-Formated","Formated.csv")
+output_file = os.path.join("CSV-Formated","Formated_Employee_Data.csv")
 
 #  Open the output file
 with open(output_file, "w") as datafile:
