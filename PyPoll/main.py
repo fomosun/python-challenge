@@ -27,8 +27,6 @@ with open(input_file,newline="", encoding="utf-8") as elections:
         # Counting the total numbers of votes.
         total_votes +=1
 
-        # We have four candidates if the name is found, count the times it appears and store in a list
-        # We can use this values in our percent vote calculation in the print statements
         if row[2] == "Khan": 
             khan_votes +=1
         elif row[2] == "Correy":
