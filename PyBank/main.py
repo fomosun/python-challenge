@@ -27,12 +27,6 @@ with open(input_file,newline="", encoding="utf-8") as csvfile:
         
         # Take the difference between two months and append to monthly profit change
         monthly_profit_change.append(sum_profit[i+1]-sum_profit[i])
-
-    # Iterate through the profits in order to get the monthly change in profits
-    for i in range(len(sum_profit)-1):
-        
-        # Take the difference between two months and append to monthly profit change
-        monthly_profit_change.append(sum_profit[i+1]-sum_profit[i])
         
 # Obtain the max and min of the the montly profit change list
 max_increase_value = max(monthly_profit_change)
